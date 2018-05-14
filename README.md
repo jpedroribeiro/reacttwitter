@@ -10,7 +10,7 @@ A simple app to play around with React tools and tech.
 * Conditional rendering
 * Life cycle methods
 * Data from server
-* Asynch / await
+* Async / await
 * Functional components
 * TODO: Redux
 * TODO: Styled components
