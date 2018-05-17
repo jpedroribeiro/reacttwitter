@@ -4,15 +4,26 @@ import Header from './Header';
 import Footer from './Footer';
 import ConnectedForm from './ConnectedForm';
 import ConnectedList from './ConnectedList';
+import { addTuite } from './actions';
+import store from './store';
 import './App.css';
 
-class App extends Component {
-	// async componentDidMount() {
-	// 	let response = await fetch('http://localhost:5000/api');
-	// 	let data = await response.json();
+async function loadTweets() {
+	let response = await fetch('http://localhost:5000/api');
+	let data = await response.json();
 
-	// 	this.setState(data);
-	// }
+	return data;
+}
+
+class App extends Component {
+	componentDidMount() {
+		// Load up tweets from server/API
+		loadTweets().then(data => {
+			data.tweets.map(tweet => {
+				store.dispatch(addTuite(tweet));
+			});
+		});
+	}
 
 	render() {
 		return [

@@ -12,7 +12,7 @@ A simple app to play around with React tools and tech. Heavily influenced by htt
 * Data from server
 * Async / await
 * Functional components
-* TODO: Redux
+* Redux
 * TODO: Styled components
 * TODO: Server side rendering
 * TODO: GraphQL

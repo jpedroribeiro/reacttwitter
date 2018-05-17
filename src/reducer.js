@@ -1,28 +1,18 @@
 import { ADD_TUITE } from './action-types';
 
-// TODO this
-// async function loadTweets() {
-// 	let response = await fetch('http://localhost:5000/api');
-// 	let data = await response.json();
-
-// 	return data;
-// }
-
-// loadTweets().then(tweets => {});
-
 const initialState = {
 	tweets: [
 		{
-			id: 0,
-			user: 'test',
-			message: 'empty tweet',
-			date: Date.now()
+			id: 2,
+			user: 'jpedroribeiro',
+			message: 'this is a hardcoded tweet from reducer',
+			date: new Date('10/03/2018 13:45:59')
 		},
 		{
-			id: 1,
-			user: 'another test',
-			message: 'another empty tweet',
-			date: Date.now()
+			id: 3,
+			user: 'jpedroribeiro',
+			message: 'this is another hardcoded tweet from reducer',
+			date: new Date('15/03/2018 14:09:11')
 		}
 	]
 };
@@ -36,7 +26,10 @@ const rootReducer = (state = initialState, action) => {
 					...state.tweets,
 					{
 						...action.payload,
-						id: state.tweets.length
+						id:
+							action.payload.id !== undefined
+								? action.payload.id
+								: state.tweets.length
 					}
 				]
 			};

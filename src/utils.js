@@ -21,6 +21,17 @@ export const timeConverter = UNIX_timestamp => {
 	var min = a.getMinutes();
 	var sec = a.getSeconds();
 	var time =
-		date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+		date +
+		' ' +
+		month +
+		' ' +
+		year +
+		', ' +
+		hour +
+		'h ' +
+		min +
+		'min ' +
+		sec +
+		'sec';
 	return time;
 };

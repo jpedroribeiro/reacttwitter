@@ -16,8 +16,14 @@ app.get('/api', (req, res) => {
 			{
 				id: 0,
 				user: 'jpedroribeiro',
-				message: 'this is a tweet',
-				date: Date.now()
+				message: 'this is a tweet from the api',
+				date: new Date('21/03/2018 03:19:08')
+			},
+			{
+				id: 1,
+				user: 'jpedroribeiro',
+				message: 'this is another tweet from the api',
+				date: new Date('01/04/2018 10:44:08')
 			}
 		]
 	});
